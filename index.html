@@ -4,6 +4,7 @@
 		<title>three.js webgl - interactive - voxel painter</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
 		<style>
 			body {
 				font-family: Monospace;
@@ -39,16 +40,43 @@
 				transition: all 200ms ease-out;
 				/*top: -100px;*/
 			}
+			div.info{
+				top: 10px;
+				margin-left: 80px;
+				margin-top: 50px;
+				width:34%;
+				position: absolute;
+				text-align:left;
+
+			}
+			div>a{
+				font-family: 'Droid Sans', sans-serif;
+			    font-weight: 700;
+			    font-style: normal;
+			    font-size: 52px;
+			    text-transform: uppercase;
+			    text-decoration: none;
+			    letter-spacing: .95px;
+			}
 		</style>
 	</head>
 	<body>
+<!-- 	var info = document.createElement( 'div' );
+	info.style.position = 'absolute';
+	info.style.top = '10px';
+	info.style.width = '100%';
+	info.style.marginLeft = '20px'
+	info.style.textAlign = 'left';
+	info.innerHTML = 'Draw your own pattern, click add voxel, shift + click to remove voxel ';
+	container.appendChild( info );
+ -->	
+	<div class="info">
+	<a href="http://clementidea.com">Clement</a>
+	<p>Draw your own pattern, <strong>click</strong> add voxel, <strong>shift</strong> + <strong>click</strong> to remove voxel</p>
+	</div>
+
 	<div id="green"></div>
 	<div id="blue"></div>
-	<div style="position: absolute; top: 10px; width: 100%; text-align: center; ">
-
-
-
-	</div>
 		<script src="js/three.js"></script>
 
 		<script src="js/Detector.js"></script>
@@ -75,14 +103,14 @@
 			function init() {
 				container = document.createElement( 'div' );
 				document.body.appendChild( container );
-				var info = document.createElement( 'div' );
-				info.style.position = 'absolute';
-				info.style.top = '10px';
-				info.style.width = '100%';
-				info.style.marginLeft = '20px'
-				info.style.textAlign = 'left';
-				info.innerHTML = 'Draw your own pattern, click add voxel, shift + click to remove voxel ';
-				container.appendChild( info );
+				// var info = document.createElement( 'div' );
+				// info.style.position = 'absolute';
+				// info.style.top = '10px';
+				// info.style.width = '100%';
+				// info.style.marginLeft = '20px'
+				// info.style.textAlign = 'left';
+				// info.innerHTML = 'Draw your own pattern, click add voxel, shift + click to remove voxel ';
+				// container.appendChild( info );
 				// origianl 
 				// camera = new THREE.PerspectiveCamera( 10, window.innerWidth / window.innerHeight, 1, 10000 );
 				// camera.position.set( 1300, 800, 1300 );

@@ -84,10 +84,11 @@
 		<script src="js/three.js"></script>
 
 		<script src="js/Detector.js"></script>
+		<script src="js/LittltOrbitControls.js"></script>
 
 		<script>
 			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
-			var container;
+			var container, controls;
 			var camera, scene, renderer;
 			var plane, cube;
 			var mouse, raycaster, isShiftDown = false;
@@ -186,6 +187,10 @@
 				document.addEventListener( 'keyup', onDocumentKeyUp, false );
 				//
 				window.addEventListener( 'resize', onWindowResize, false );
+				// controls, camera
+				controls = new THREE.OrbitControls( camera, renderer.domElement );
+				controls.target.set( 0, 0, 0 );
+				controls.update();
 			}
 
 
